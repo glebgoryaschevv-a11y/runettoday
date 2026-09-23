@@ -67,15 +67,30 @@ device_add() {
         exit 1
     fi
 
-    if ! command -v sw_vers >/dev/null 2>&1; then
-        printf '%s\n' 'RunetToday: macOS tools are unavailable.'
-        exit 1
-    fi
+    _os="$(uname -s)"
 
-    name="$(scutil --get ComputerName 2>/dev/null || hostname)"
-    platform="macOS"
-    version="$(sw_vers -productVersion)"
-    hostname_value="$(hostname)"
+    case "$_os" in
+        Darwin)
+            name="$(scutil --get ComputerName 2>/dev/null || hostname)"
+            platform="macOS"
+            version="$(sw_vers -productVersion 2>/dev/null || echo unknown)"
+            hostname_value="$(hostname)"
+            ;;
+        Linux)
+            name="$(hostname)"
+            platform="Linux"
+            if [ -r /etc/os-release ]; then
+                version="$(. /etc/os-release; printf '%s' "${PRETTY_NAME:-${VERSION_ID:-unknown}}")"
+            else
+                version="unknown"
+            fi
+            hostname_value="$(hostname)"
+            ;;
+        *)
+            printf '%s\n' "RunetToday: unsupported OS: $_os"
+            exit 1
+            ;;
+    esac
 
     name_json="$(printf '%s' "$name" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')"
     type_json="$(printf '%s' "desktop" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')"
@@ -91,7 +106,6 @@ device_add() {
     if [ "$request_status" -ne 0 ]; then
         if auth_refresh; then
             auth_load
-
             response="$(api_request POST /devices "$body" "$access_token" 2>/tmp/runettoday-api-error)"
             request_status=$?
         fi
@@ -99,11 +113,9 @@ device_add() {
 
     if [ "$request_status" -ne 0 ]; then
         printf '%s\n' 'Unable to register device.'
-
         if [ -s /tmp/runettoday-api-error ]; then
             cat /tmp/runettoday-api-error
         fi
-
         rm -f /tmp/runettoday-api-error
         exit 1
     fi
