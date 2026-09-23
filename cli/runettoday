@@ -1,0 +1,160 @@
+#!/bin/sh
+
+SCRIPT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+
+RUNETTODAY_ROOT="$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)"
+export RUNETTODAY_ROOT
+
+. "$SCRIPT_DIR/src/autostart.sh"
+
+VERSION="1.0.0"
+
+show_help() {
+    cat <<'HELP'
+RunetToday CLI
+
+Usage:
+  runettoday <command>
+
+Account:
+  register              Create a RunetToday account
+  login                 Sign in to your account
+  logout                Sign out
+  account               Show current account
+  devices               Show linked devices
+  device add             Register this computer
+  device remove <id>     Remove a linked device
+
+Software:
+  install               Install RunetToday
+  update                Update RunetToday
+  remove                Remove RunetToday
+  doctor                Run diagnostics
+  status                Show status
+  self-update           Update the CLI itself
+
+Автопост:
+  auto on               Включить автопост телеметрии
+  auto off              Выключить
+  auto status           Статус
+
+Router:
+  control-deck          Open the OpenWrt Control Deck
+
+General:
+  --help, -h            Show this help
+  --version, -v         Show version
+
+Examples:
+  runettoday register
+  runettoday login
+  runettoday account
+  runettoday devices
+  runettoday install
+  runettoday doctor
+  runettoday control-deck
+HELP
+}
+
+show_version() {
+    printf 'RunetToday CLI %s\n' "$VERSION"
+}
+
+require_command() {
+    command_name="$1"
+
+    if [ ! -x "$SCRIPT_DIR/commands/$command_name.sh" ]; then
+        printf 'RunetToday: command "%s" is not implemented yet.\n' "$command_name"
+        exit 1
+    fi
+
+    exec "$SCRIPT_DIR/commands/$command_name.sh" "${@:2}"
+}
+
+case "${1:-}" in
+    register)
+        exec "$SCRIPT_DIR/commands/register.sh"
+        ;;
+
+    login)
+        exec "$SCRIPT_DIR/commands/login.sh"
+        ;;
+
+    logout)
+        exec "$SCRIPT_DIR/commands/logout.sh"
+        ;;
+
+    account)
+        exec "$SCRIPT_DIR/commands/account.sh"
+        ;;
+
+    devices)
+        if [ -x "$SCRIPT_DIR/commands/devices.sh" ]; then
+            exec "$SCRIPT_DIR/commands/devices.sh"
+        fi
+
+        printf '%s\n' 'RunetToday: devices command is not implemented yet.'
+        exit 1
+        ;;
+
+    device)
+        exec "$SCRIPT_DIR/commands/device.sh" "${@:2}"
+        ;;
+
+    install)
+        require_command install
+        ;;
+
+    update)
+        require_command update
+        ;;
+
+    remove)
+        require_command remove
+        ;;
+
+    doctor)
+        require_command doctor
+        ;;
+
+    status)
+        require_command status
+        ;;
+
+    self-update)
+        if [ -x "$SCRIPT_DIR/commands/self-update.sh" ]; then
+            exec "$SCRIPT_DIR/commands/self-update.sh"
+        fi
+
+        printf '%s\n' 'RunetToday: self-update command is not implemented yet.'
+        exit 1
+        ;;
+
+    auto)
+        shift
+        case "${1:-}" in
+            on)     autostart_install ;;
+            off)    autostart_uninstall ;;
+            status|"") autostart_status ;;
+            *)      printf 'Usage: runettoday auto [on|off|status]\n' ;;
+        esac
+        ;;
+
+    control-deck)
+        exec "$SCRIPT_DIR/commands/runettoday.sh"
+        ;;
+
+    --version|-v)
+        show_version
+        ;;
+
+    --help|-h|"")
+        show_help
+        ;;
+
+    *)
+        printf 'RunetToday: unknown command "%s"\n\n' "$1"
+        show_help
+        exit 1
+        ;;
+esac

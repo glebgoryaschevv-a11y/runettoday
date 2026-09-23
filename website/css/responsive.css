@@ -1,0 +1,410 @@
+@media (max-width: 1000px) {
+
+    .navigation {
+        gap: 18px;
+        margin-right: 18px;
+    }
+
+    .navigation a:nth-child(3),
+    .navigation a:nth-child(4) {
+        display: none;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cli-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .cli-content p {
+        max-width: 550px;
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    :root {
+        --header-height: 64px;
+    }
+
+
+    .container {
+        width: min(
+            calc(100% - 32px),
+            var(--container)
+        );
+    }
+
+
+    .site-header {
+        height: var(--header-height);
+    }
+
+
+    .navigation {
+        display: none;
+    }
+
+
+    .header-button {
+        min-height: 34px;
+
+        padding: 0 13px;
+
+        font-size: 10px;
+    }
+
+
+    .hero {
+        min-height: 760px;
+
+        padding-top: var(--header-height);
+    }
+
+
+    .hero h1 {
+        margin-top: 26px;
+
+        font-size: clamp(
+            54px,
+            15vw,
+            78px
+        );
+    }
+
+
+    .hero-description {
+        margin-top: 26px;
+
+        font-size: 15px;
+
+        line-height: 1.55;
+    }
+
+
+    .hero-actions {
+        width: 100%;
+
+        flex-direction: column;
+
+        margin-top: 28px;
+    }
+
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+
+    .install-command {
+        margin-top: 45px;
+
+        border-radius: 15px;
+    }
+
+
+    .install-command-body {
+        padding: 18px;
+
+        font-size: 10px;
+    }
+
+
+    .control-preview {
+        padding: 100px 0 110px;
+    }
+
+
+    .section-heading {
+        margin-bottom: 38px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 43px;
+    }
+
+
+    .section-heading p {
+        margin-top: 18px;
+
+        font-size: 15px;
+    }
+
+
+    .dashboard-window {
+        border-radius: 22px;
+    }
+
+
+    .dashboard-topbar {
+        height: 50px;
+
+        padding: 0 14px;
+    }
+
+
+    .window-controls {
+        width: auto;
+    }
+
+
+    .dashboard-status {
+        width: auto;
+    }
+
+
+    .dashboard-title {
+        font-size: 10px;
+    }
+
+
+    .dashboard-content {
+        display: block;
+
+        min-height: auto;
+    }
+
+
+    .dashboard-sidebar {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 4px;
+
+        padding: 10px;
+
+        overflow-x: auto;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.07);
+    }
+
+
+    .sidebar-section {
+        display: flex;
+
+        align-items: center;
+
+        gap: 4px;
+    }
+
+
+    .sidebar-section + .sidebar-section {
+        margin-top: 0;
+    }
+
+
+    .sidebar-label {
+        display: none;
+    }
+
+
+    .sidebar-item {
+        flex-shrink: 0;
+
+        margin: 0;
+
+        padding: 0 10px;
+
+        font-size: 9px;
+    }
+
+
+    .sidebar-item span {
+        display: none;
+    }
+
+
+    .dashboard-main {
+        padding: 20px;
+    }
+
+
+    .dashboard-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        margin-bottom: 20px;
+    }
+
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .metric-card {
+        min-height: 110px;
+
+        padding: 15px;
+    }
+
+
+    .metric-card strong {
+        margin-top: 14px;
+
+        font-size: 21px;
+    }
+
+
+    .dashboard-panels {
+        grid-template-columns: 1fr;
+    }
+
+
+    .features {
+        padding: 90px 0 110px;
+    }
+
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .feature-card {
+        min-height: 230px;
+
+        padding: 24px;
+    }
+
+
+    .feature-icon {
+        margin-bottom: 45px;
+    }
+
+
+    .cli-section {
+        padding: 90px 0 110px;
+    }
+
+
+    .cli-content h2 {
+        font-size: 43px;
+    }
+
+
+    .cli-terminal-content {
+        padding: 20px;
+
+        font-size: 10px;
+    }
+
+
+    .final-cta {
+        padding: 40px 0 90px;
+    }
+
+
+    .cta-card {
+        min-height: 420px;
+
+        padding: 40px 24px;
+
+        border-radius: 28px;
+    }
+
+
+    .cta-card h2 {
+        font-size: 50px;
+    }
+
+
+    .footer-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .brand-name {
+        display: none;
+    }
+
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+
+    .hero-badge {
+        font-size: 9px;
+    }
+
+
+    .metrics-grid {
+        gap: 7px;
+    }
+
+
+    .metric-card {
+        padding: 13px;
+
+        border-radius: 12px;
+    }
+
+
+    .metric-card-top {
+        font-size: 7px;
+    }
+
+
+    .metric-card strong {
+        font-size: 19px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 39px;
+    }
+
+
+    .cta-card h2 {
+        font-size: 44px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}

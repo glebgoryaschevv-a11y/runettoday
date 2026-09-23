@@ -1,0 +1,6 @@
+#!/bin/sh
+
+RUNETTODAY_API_URL="${RUNETTODAY_API_URL:-https://www.runettoday.ru/api/v1}"
+
+RUNETTODAY_CONFIG_DIR="${RUNETTODAY_CONFIG_DIR:-$HOME/.config/runettoday}"
+RUNETTODAY_CREDENTIALS_FILE="$RUNETTODAY_CONFIG_DIR/credentials"

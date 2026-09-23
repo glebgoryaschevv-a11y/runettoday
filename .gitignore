@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+node_modules/
+server/node_modules/
+cli/node_modules/
+*.log
+*.tmp
+
+# Бэкапы
+*.bak
+*.bak-*
+*.bak2-*
+*.backup-*

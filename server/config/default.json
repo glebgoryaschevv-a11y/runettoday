@@ -1,0 +1,6 @@
+{
+  "host": "127.0.0.1",
+  "port": 4180,
+  "databaseUrl": "postgresql://runettoday:CHANGE_ME@127.0.0.1:5432/runettoday",
+  "jwtSecret": "CHANGE_ME"
+}

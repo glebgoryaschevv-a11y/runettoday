@@ -1,0 +1,15 @@
+#!/bin/sh
+# Первичная установка: включаем сервис, если ещё не включён.
+if ! uci -q get runettoday.main >/dev/null 2>&1; then
+	uci -q batch <<BATCH
+set runettoday.main=runettoday
+set runettoday.main.enabled='1'
+set runettoday.main.api_url='https://www.runettoday.ru/api/v1'
+set runettoday.main.telemetry_interval='900'
+set runettoday.main.heartbeat_interval='300'
+commit runettoday
+BATCH
+fi
+
+/etc/init.d/runettoday enable 2>/dev/null || true
+exit 0

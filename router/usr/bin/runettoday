@@ -1,0 +1,50 @@
+#!/bin/sh
+
+. /usr/lib/runettoday/core.sh
+. /usr/lib/runettoday/diagnostics.sh
+
+rt_help() {
+	cat <<HELP
+RunetToday CLI (OpenWrt)
+
+Usage:
+  runettoday login [email] [password]   Sign in
+  runettoday logout                     Sign out
+  runettoday register                   Register this router
+  runettoday telemetry                  Send telemetry
+  runettoday heartbeat                  Send heartbeat
+  runettoday status                     Show status
+  runettoday help                       This help
+HELP
+}
+
+case "${1:-}" in
+	login)
+		shift
+		rt_login "$@"
+		;;
+	logout)
+		rt_logout
+		;;
+	register)
+		rt_register_device
+		;;
+	telemetry)
+		rt_send_telemetry
+		;;
+	heartbeat)
+		rt_send_heartbeat
+		;;
+	status)
+		rt_status
+		;;
+	help|--help|-h|"")
+		rt_help
+		;;
+	*)
+		echo "Unknown command: $1"
+		echo
+		rt_help
+		exit 1
+		;;
+esac

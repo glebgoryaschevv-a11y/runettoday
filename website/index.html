@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RunetToday — Network Control</title>
+    <meta
+        name="description"
+        content="RunetToday — современная система управления сетью, роутерами и серверами."
+    >
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <div class="background-glow background-glow-one"></div>
+    <div class="background-glow background-glow-two"></div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="brand">
+                <span class="brand-mark">R</span>
+                <span class="brand-name">RunetToday</span>
+            </a>
+
+            <nav class="navigation">
+                <a href="pages/updates.html">Updates</a>
+                <a href="pages/about.html">About</a>
+            </nav>
+
+            <a href="pages/download.html" class="header-button">
+                Get RunetToday
+            </a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+            <div class="container hero-content">
+
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    Network control, redesigned
+                </div>
+
+                <h1>
+                    Your network.<br>
+                    <span>Your control.</span>
+                </h1>
+
+                <p class="hero-description">
+                    RunetToday brings your router, network security,
+                    DNS, monitoring and infrastructure together in one
+                    modern control system.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="pages/download.html" class="button button-primary">
+                        Get RunetToday
+                    </a>
+
+                    <a href="pages/docs.html" class="button button-secondary">
+                        Documentation
+                    </a>
+                </div>
+
+                <div class="install-command">
+                    <div class="install-command-header">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                    </div>
+
+                    <div class="install-command-body">
+                        <span class="prompt">$</span>
+                        <span>curl -fsSL https://www.runettoday.ru/install.sh | sh</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="control-preview">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">CONTROL DECK</span>
+
+                    <h2>
+                        Everything you need.<br>
+                        Nothing you don't.
+                    </h2>
+
+                    <p>
+                        A single interface for monitoring,
+                        securing and controlling your network.
+                    </p>
+                </div>
+
+
+                <div class="dashboard-window">
+
+                    <div class="dashboard-topbar">
+
+                        <div class="window-controls">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="dashboard-title">
+                            RunetToday
+                        </div>
+
+                        <div class="dashboard-status">
+                            <span class="status-dot"></span>
+                            Online
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-content">
+
+                        <aside class="dashboard-sidebar">
+
+                            <div class="sidebar-section">
+                                <div class="sidebar-label">
+                                    CONTROL
+                                </div>
+
+                                <a class="sidebar-item active">
+                                    <span>⌂</span>
+                                    Dashboard
+                                </a>
+
+                                <a class="sidebar-item">
+                                    <span>⌁</span>
+                                    Network
+                                </a>
+
+                                <a class="sidebar-item">
+                                    <span>◈</span>
+                                    Security
+                                </a>
+
+                                <a class="sidebar-item">
+                                    <span>◌</span>
+                                    DNS
+                                </a>
+                            </div>
+
+
+                            <div class="sidebar-section">
+
+                                <div class="sidebar-label">
+                                    SYSTEM
+                                </div>
+
+                                <a class="sidebar-item">
+                                    <span>◎</span>
+                                    Tailscale
+                                </a>
+
+                                <a class="sidebar-item">
+                                    <span>◫</span>
+                                    Backups
+                                </a>
+
+                                <a class="sidebar-item">
+                                    <span>⌘</span>
+                                    Diagnostics
+                                </a>
+
+                            </div>
+
+                        </aside>
+
+
+                        <div class="dashboard-main">
+
+                            <div class="dashboard-heading">
+
+                                <div>
+                                    <span class="dashboard-eyebrow">
+                                        OVERVIEW
+                                    </span>
+
+                                    <h3>
+                                        Good evening.
+                                    </h3>
+                                </div>
+
+                                <div class="system-pill">
+                                    <span class="status-dot"></span>
+                                    System healthy
+                                </div>
+
+                            </div>
+
+
+                            <div class="metrics-grid">
+
+                                <div class="metric-card">
+
+                                    <div class="metric-card-top">
+                                        <span>CPU</span>
+                                        <span>PROCESSOR</span>
+                                    </div>
+
+                                    <strong>12%</strong>
+
+                                    <div class="metric-bar">
+                                        <span style="width: 12%"></span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="metric-card">
+
+                                    <div class="metric-card-top">
+                                        <span>MEMORY</span>
+                                        <span>RAM</span>
+                                    </div>
+
+                                    <strong>38%</strong>
+
+                                    <div class="metric-bar">
+                                        <span style="width: 38%"></span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="metric-card">
+
+                                    <div class="metric-card-top">
+                                        <span>NETWORK</span>
+                                        <span>WAN</span>
+                                    </div>
+
+                                    <strong class="metric-online">
+                                        Online
+                                    </strong>
+
+                                    <div class="metric-subtitle">
+                                        1 Gbps
+                                    </div>
+
+                                </div>
+
+
+                                <div class="metric-card">
+
+                                    <div class="metric-card-top">
+                                        <span>CLIENTS</span>
+                                        <span>DEVICES</span>
+                                    </div>
+
+                                    <strong>14</strong>
+
+                                    <div class="metric-subtitle">
+                                        Active devices
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="dashboard-panels">
+
+                                <div class="system-panel">
+
+                                    <div class="panel-header">
+                                        <span>Security</span>
+                                        <span class="panel-good">
+                                            Protected
+                                        </span>
+                                    </div>
+
+                                    <div class="security-row">
+                                        <span>Firewall</span>
+                                        <strong>Active</strong>
+                                    </div>
+
+                                    <div class="security-row">
+                                        <span>DNS Protection</span>
+                                        <strong>Active</strong>
+                                    </div>
+
+                                    <div class="security-row">
+                                        <span>Tailscale</span>
+                                        <strong>Connected</strong>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="system-panel">
+
+                                    <div class="panel-header">
+                                        <span>Network</span>
+                                        <span>Traffic</span>
+                                    </div>
+
+                                    <div class="traffic-graph">
+
+                                        <span style="height: 32%"></span>
+                                        <span style="height: 45%"></span>
+                                        <span style="height: 38%"></span>
+                                        <span style="height: 62%"></span>
+                                        <span style="height: 54%"></span>
+                                        <span style="height: 76%"></span>
+                                        <span style="height: 66%"></span>
+                                        <span style="height: 84%"></span>
+                                        <span style="height: 72%"></span>
+                                        <span style="height: 91%"></span>
+                                        <span style="height: 79%"></span>
+                                        <span style="height: 88%"></span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="features">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="eyebrow">
+                        BUILT FOR CONTROL
+                    </span>
+
+                    <h2>
+                        One system.<br>
+                        Every layer.
+                    </h2>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Network
+                        </h3>
+
+                        <p>
+                            Monitor interfaces, connections,
+                            routes, DNS and network health
+                            from one place.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ◉
+                        </div>
+
+                        <h3>
+                            Security
+                        </h3>
+
+                        <p>
+                            Firewall controls, access management,
+                            protection and security diagnostics.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ◌
+                        </div>
+
+                        <h3>
+                            DNS Protection
+                        </h3>
+
+                        <p>
+                            Manage blocklists, trusted domains,
+                            DNS providers and filtering rules.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Infrastructure
+                        </h3>
+
+                        <p>
+                            Connect routers, servers and remote
+                            systems through a unified interface.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="cli-section">
+
+            <div class="container cli-container">
+
+                <div class="cli-content">
+
+                    <span class="eyebrow">
+                        COMMAND LINE
+                    </span>
+
+                    <h2>
+                        Built for the terminal.
+                    </h2>
+
+                    <p>
+                        Install and manage RunetToday directly
+                        from your router or server.
+                    </p>
+
+                </div>
+
+
+                <div class="cli-terminal">
+
+                    <div class="cli-terminal-bar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="cli-terminal-content">
+
+                        <div>
+                            <span class="cli-prompt">$</span>
+                            runettoday status
+                        </div>
+
+                        <div class="cli-output">
+                            System              healthy<br>
+                            Network             online<br>
+                            Firewall            active<br>
+                            DNS protection      active<br>
+                            Tailscale            connected
+                        </div>
+
+                        <div>
+                            <span class="cli-prompt">$</span>
+                            runettoday update
+                        </div>
+
+                        <div class="cli-output success">
+                            RunetToday is up to date.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="final-cta">
+
+            <div class="container">
+
+                <div class="cta-card">
+
+                    <span class="eyebrow">
+                        RUNETTODAY
+                    </span>
+
+                    <h2>
+                        Take control<br>
+                        of your network.
+                    </h2>
+
+                    <p>
+                        One command. One control system.
+                    </p>
+
+                    <a href="pages/download.html" class="button button-primary">
+                        Get RunetToday
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <span class="brand-mark">R</span>
+                <span>RunetToday</span>
+            </div>
+
+            <div class="footer-links">
+                <a href="pages/about.html">About</a>
+                <a href="pages/updates.html">Updates</a>
+            </div>
+
+            <div class="footer-copy">
+                © 2026 RunetToday
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+
+</body>
+</html>
